@@ -33,13 +33,11 @@
             this.lbCronometro = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.numMinutos = new System.Windows.Forms.NumericUpDown();
-            this.numSegundos = new System.Windows.Forms.NumericUpDown();
             this.btnInicia = new System.Windows.Forms.Button();
+            this.txtMinutos = new System.Windows.Forms.TextBox();
+            this.txtSegundos = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinutos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSegundos)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIniciaPausa
@@ -95,20 +93,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Microondas";
             // 
-            // numMinutos
-            // 
-            this.numMinutos.Location = new System.Drawing.Point(12, 181);
-            this.numMinutos.Name = "numMinutos";
-            this.numMinutos.Size = new System.Drawing.Size(59, 20);
-            this.numMinutos.TabIndex = 6;
-            // 
-            // numSegundos
-            // 
-            this.numSegundos.Location = new System.Drawing.Point(77, 181);
-            this.numSegundos.Name = "numSegundos";
-            this.numSegundos.Size = new System.Drawing.Size(59, 20);
-            this.numSegundos.TabIndex = 7;
-            // 
             // btnInicia
             // 
             this.btnInicia.Location = new System.Drawing.Point(223, 65);
@@ -119,14 +103,28 @@
             this.btnInicia.UseVisualStyleBackColor = true;
             this.btnInicia.Click += new System.EventHandler(this.btnInicia_Click);
             // 
+            // txtMinutos
+            // 
+            this.txtMinutos.Location = new System.Drawing.Point(12, 179);
+            this.txtMinutos.Name = "txtMinutos";
+            this.txtMinutos.Size = new System.Drawing.Size(67, 20);
+            this.txtMinutos.TabIndex = 9;
+            // 
+            // txtSegundos
+            // 
+            this.txtSegundos.Location = new System.Drawing.Point(94, 179);
+            this.txtSegundos.Name = "txtSegundos";
+            this.txtSegundos.Size = new System.Drawing.Size(67, 20);
+            this.txtSegundos.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 269);
+            this.Controls.Add(this.txtSegundos);
+            this.Controls.Add(this.txtMinutos);
             this.Controls.Add(this.btnInicia);
-            this.Controls.Add(this.numSegundos);
-            this.Controls.Add(this.numMinutos);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnIniciaPausa);
@@ -135,9 +133,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numMinutos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numSegundos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -147,9 +144,9 @@
         private System.Windows.Forms.Label lbCronometro;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown numMinutos;
-        private System.Windows.Forms.NumericUpDown numSegundos;
         private System.Windows.Forms.Button btnInicia;
+        private System.Windows.Forms.TextBox txtMinutos;
+        private System.Windows.Forms.TextBox txtSegundos;
     }
 }
 

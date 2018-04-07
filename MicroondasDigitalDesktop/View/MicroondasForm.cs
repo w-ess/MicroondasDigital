@@ -27,7 +27,6 @@ namespace MicroondasDigitalDesktop
 
         private void btnIniciaPausa_Click(object sender, EventArgs e)
         {
-            microondas.Segundos = 5;
             microondas.Iniciar_Parar();            
         }
 
