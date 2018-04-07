@@ -24,7 +24,6 @@ namespace MicroondasDigitalDesktop.Entidades
             aTimer.Interval = 1000;
             aTimer.Elapsed += OnTimedEvent;
             aTimer.AutoReset = true;
-           // this.Segundos = 10;
         }
 
         // Iniciar
