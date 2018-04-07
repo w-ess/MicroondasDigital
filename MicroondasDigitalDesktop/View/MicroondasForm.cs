@@ -26,8 +26,7 @@ namespace MicroondasDigitalDesktop
         private void btnIniciaPausa_Click(object sender, EventArgs e)
         {
             microondas.Segundos = 5;
-            microondas.Iniciar_Parar();
-            //*** falta pegar o valor do evento do timer na class pai e pegar esse valor nesse form
+            microondas.Iniciar_Parar();            
         }
 
         public override void OnTimedEvent(object source, ElapsedEventArgs e)
