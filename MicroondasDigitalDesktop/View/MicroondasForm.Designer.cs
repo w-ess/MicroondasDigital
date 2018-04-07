@@ -36,6 +36,10 @@
             this.btnInicia = new System.Windows.Forms.Button();
             this.txtMinutos = new System.Windows.Forms.TextBox();
             this.txtSegundos = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -89,9 +93,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 29);
+            this.label1.Size = new System.Drawing.Size(158, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Microondas";
+            this.label1.Text = "Micro-ondas";
             // 
             // btnInicia
             // 
@@ -105,23 +109,62 @@
             // 
             // txtMinutos
             // 
-            this.txtMinutos.Location = new System.Drawing.Point(12, 179);
+            this.txtMinutos.Location = new System.Drawing.Point(17, 237);
             this.txtMinutos.Name = "txtMinutos";
-            this.txtMinutos.Size = new System.Drawing.Size(67, 20);
+            this.txtMinutos.Size = new System.Drawing.Size(64, 20);
             this.txtMinutos.TabIndex = 9;
+            this.txtMinutos.Text = "10";
             // 
             // txtSegundos
             // 
-            this.txtSegundos.Location = new System.Drawing.Point(94, 179);
+            this.txtSegundos.Location = new System.Drawing.Point(17, 196);
             this.txtSegundos.Name = "txtSegundos";
-            this.txtSegundos.Size = new System.Drawing.Size(67, 20);
+            this.txtSegundos.Size = new System.Drawing.Size(80, 20);
             this.txtSegundos.TabIndex = 10;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(121, 196);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(80, 20);
+            this.textBox1.TabIndex = 11;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(14, 221);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Potência:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(14, 180);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Minutos:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(118, 180);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 13);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Segundos:";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 269);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtSegundos);
             this.Controls.Add(this.txtMinutos);
             this.Controls.Add(this.btnInicia);
@@ -147,6 +190,10 @@
         private System.Windows.Forms.Button btnInicia;
         private System.Windows.Forms.TextBox txtMinutos;
         private System.Windows.Forms.TextBox txtSegundos;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

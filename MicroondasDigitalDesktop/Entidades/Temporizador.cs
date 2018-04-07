@@ -10,7 +10,7 @@ namespace MicroondasDigitalDesktop.Entidades
 {
    public class Temporizador : Form
     {
-        public int Horas { get; set; }
+        public int Horas { get; set; }        
         public int Minutos { get; set; }
         public int Segundos { get; set; }
 
@@ -29,6 +29,7 @@ namespace MicroondasDigitalDesktop.Entidades
         // Iniciar
         public void Inciar()
         {
+
             aTimer.Start();
         }
 

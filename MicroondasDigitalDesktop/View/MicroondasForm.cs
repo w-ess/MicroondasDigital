@@ -63,9 +63,22 @@ namespace MicroondasDigitalDesktop
 
         private void btnInicia_Click(object sender, EventArgs e)
         {
-            microondas.Minutos  = Convert.ToInt32(numMinutos.Value);
-            microondas.Segundos = Convert.ToInt32(numSegundos.Value);
-            microondas.Inciar();
+            int TempNumero;
+
+            if (int.TryParse(txtMinutos.Text, out TempNumero) && (int.TryParse(txtSegundos.Text, out TempNumero)))
+            {
+                microondas.Minutos = Convert.ToInt32(txtMinutos.Text);
+                microondas.Segundos = Convert.ToInt32(txtSegundos.Text);
+                microondas.Inciar();
+            }
+            else
+            {
+                // MessageBox.Show("Somente é permitido valores numericos para Minutos e Segundos");
+                
+                throw new ArgumentNullException("Somente é permitido valores numericos para Minutos e Segundos");
+            }
+            
+
         }
 
         private void lbCronometro_Click(object sender, EventArgs e)
