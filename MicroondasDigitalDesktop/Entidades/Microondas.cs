@@ -28,7 +28,7 @@ namespace MicroondasDigitalDesktop.Entidades
 
         public override void Inciar()
         {
-            //Valida se o tempo é entre 1 segundo a 2 minutos
+            //Valida se o tempo é entre 1 segundo a 2 minutos           
             if ( (this.Minutos * 60 + this.Segundos > 120) || (this.Minutos * 60 + this.Segundos < 1) )
             {
                 throw new NullReferenceException("O tempo máximo de cozimentos é de 2 minutos e no mínimo 1 segundo.");

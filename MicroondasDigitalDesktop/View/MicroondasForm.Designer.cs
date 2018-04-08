@@ -40,6 +40,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.numPotencia = new System.Windows.Forms.NumericUpDown();
+            this.lbAquecimento = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPotencia)).BeginInit();
@@ -68,11 +69,11 @@
             // 
             this.lbCronometro.AutoSize = true;
             this.lbCronometro.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCronometro.Location = new System.Drawing.Point(7, 25);
+            this.lbCronometro.Location = new System.Drawing.Point(22, 25);
             this.lbCronometro.Name = "lbCronometro";
-            this.lbCronometro.Size = new System.Drawing.Size(182, 46);
+            this.lbCronometro.Size = new System.Drawing.Size(136, 46);
             this.lbCronometro.TabIndex = 3;
-            this.lbCronometro.Text = "00:00:00";
+            this.lbCronometro.Text = "00:0:0";
             this.lbCronometro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbCronometro.Click += new System.EventHandler(this.lbCronometro_Click);
             // 
@@ -104,7 +105,7 @@
             this.btnInicia.Name = "btnInicia";
             this.btnInicia.Size = new System.Drawing.Size(113, 38);
             this.btnInicia.TabIndex = 8;
-            this.btnInicia.Text = "Iniciar";
+            this.btnInicia.Text = "Iniciar/Reiniciar  (Início rápido)";
             this.btnInicia.UseVisualStyleBackColor = true;
             this.btnInicia.Click += new System.EventHandler(this.btnInicia_Click);
             // 
@@ -121,6 +122,7 @@
             this.txtSegundos.Name = "txtSegundos";
             this.txtSegundos.Size = new System.Drawing.Size(80, 20);
             this.txtSegundos.TabIndex = 10;
+            this.txtSegundos.Text = "30";
             // 
             // label2
             // 
@@ -152,16 +154,6 @@
             // numPotencia
             // 
             this.numPotencia.Location = new System.Drawing.Point(17, 237);
-            this.numPotencia.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numPotencia.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.numPotencia.Name = "numPotencia";
             this.numPotencia.Size = new System.Drawing.Size(64, 20);
             this.numPotencia.TabIndex = 15;
@@ -171,11 +163,21 @@
             0,
             0});
             // 
+            // lbAquecimento
+            // 
+            this.lbAquecimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAquecimento.Location = new System.Drawing.Point(227, 165);
+            this.lbAquecimento.Name = "lbAquecimento";
+            this.lbAquecimento.Size = new System.Drawing.Size(192, 95);
+            this.lbAquecimento.TabIndex = 16;
+            this.lbAquecimento.Text = "   ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 269);
+            this.Controls.Add(this.lbAquecimento);
             this.Controls.Add(this.numPotencia);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -211,6 +213,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numPotencia;
+        private System.Windows.Forms.Label lbAquecimento;
     }
 }
 
