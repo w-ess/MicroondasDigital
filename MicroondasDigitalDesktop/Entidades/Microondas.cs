@@ -8,5 +8,33 @@ namespace MicroondasDigitalDesktop.Entidades
 {
     public class Microondas : Temporizador
     {
+        //private void InitializeComponent()
+        //{
+        //    this.SuspendLayout();
+        //    // 
+        //    // Microondas
+        //    // 
+        //    this.ClientSize = new System.Drawing.Size(284, 261);
+        //    this.Name = "Microondas";
+        //    this.Load += new System.EventHandler(this.Microondas_Load);
+        //    this.ResumeLayout(false);
+
+        //}
+
+        //private void Microondas_Load(object sender, EventArgs e)
+        //{
+
+        //}
+
+        public override void Inciar()
+        {
+            //Valida se o tempo é entre 1 segundo a 2 minutos
+            if ( (this.Minutos * 60 + this.Segundos > 120) || (this.Minutos * 60 + this.Segundos < 1) )
+            {
+                throw new NullReferenceException("O tempo máximo de cozimentos é de 2 minutos e no mínimo 1 segundo.");
+            }
+
+            base.Inciar();            
+        }
     }
 }

@@ -36,12 +36,13 @@
             this.btnInicia = new System.Windows.Forms.Button();
             this.txtMinutos = new System.Windows.Forms.TextBox();
             this.txtSegundos = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.numPotencia = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPotencia)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIniciaPausa
@@ -109,25 +110,17 @@
             // 
             // txtMinutos
             // 
-            this.txtMinutos.Location = new System.Drawing.Point(17, 237);
+            this.txtMinutos.Location = new System.Drawing.Point(17, 196);
             this.txtMinutos.Name = "txtMinutos";
             this.txtMinutos.Size = new System.Drawing.Size(64, 20);
             this.txtMinutos.TabIndex = 9;
-            this.txtMinutos.Text = "10";
             // 
             // txtSegundos
             // 
-            this.txtSegundos.Location = new System.Drawing.Point(17, 196);
+            this.txtSegundos.Location = new System.Drawing.Point(121, 196);
             this.txtSegundos.Name = "txtSegundos";
             this.txtSegundos.Size = new System.Drawing.Size(80, 20);
             this.txtSegundos.TabIndex = 10;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(121, 196);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(80, 20);
-            this.textBox1.TabIndex = 11;
             // 
             // label2
             // 
@@ -156,15 +149,37 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Segundos:";
             // 
+            // numPotencia
+            // 
+            this.numPotencia.Location = new System.Drawing.Point(17, 237);
+            this.numPotencia.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numPotencia.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numPotencia.Name = "numPotencia";
+            this.numPotencia.Size = new System.Drawing.Size(64, 20);
+            this.numPotencia.TabIndex = 15;
+            this.numPotencia.Value = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 269);
+            this.Controls.Add(this.numPotencia);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtSegundos);
             this.Controls.Add(this.txtMinutos);
             this.Controls.Add(this.btnInicia);
@@ -177,6 +192,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numPotencia)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,10 +207,10 @@
         private System.Windows.Forms.Button btnInicia;
         private System.Windows.Forms.TextBox txtMinutos;
         private System.Windows.Forms.TextBox txtSegundos;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.NumericUpDown numPotencia;
     }
 }
 

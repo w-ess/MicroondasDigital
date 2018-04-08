@@ -27,9 +27,8 @@ namespace MicroondasDigitalDesktop.Entidades
         }
 
         // Iniciar
-        public void Inciar()
+        public virtual void Inciar()
         {
-
             aTimer.Start();
         }
 

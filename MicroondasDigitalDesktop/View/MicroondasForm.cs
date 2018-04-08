@@ -45,7 +45,7 @@ namespace MicroondasDigitalDesktop
             }
             else if (microondas.Segundos == 0)
             {
-                microondas.Minutos -= microondas.Minutos;
+                microondas.Minutos--;
                 microondas.Segundos = 60;
             }
 
@@ -54,7 +54,7 @@ namespace MicroondasDigitalDesktop
         }
 
 
-
+        // Botão Iniciar
         private void btnInicia_Click(object sender, EventArgs e)
         {
             try
@@ -78,6 +78,8 @@ namespace MicroondasDigitalDesktop
 
         }
 
+
+        // Validaçoes do Form
         public void ValidaDados()
         {
             int TempNumero;
