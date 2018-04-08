@@ -34,13 +34,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnInicia = new System.Windows.Forms.Button();
-            this.txtMinutos = new System.Windows.Forms.TextBox();
-            this.txtSegundos = new System.Windows.Forms.TextBox();
+            this.txtBoxString = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.numPotencia = new System.Windows.Forms.NumericUpDown();
-            this.lbAquecimento = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPotencia)).BeginInit();
@@ -71,9 +68,9 @@
             this.lbCronometro.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCronometro.Location = new System.Drawing.Point(22, 25);
             this.lbCronometro.Name = "lbCronometro";
-            this.lbCronometro.Size = new System.Drawing.Size(136, 46);
+            this.lbCronometro.Size = new System.Drawing.Size(43, 46);
             this.lbCronometro.TabIndex = 3;
-            this.lbCronometro.Text = "00:0:0";
+            this.lbCronometro.Text = "0";
             this.lbCronometro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbCronometro.Click += new System.EventHandler(this.lbCronometro_Click);
             // 
@@ -109,43 +106,28 @@
             this.btnInicia.UseVisualStyleBackColor = true;
             this.btnInicia.Click += new System.EventHandler(this.btnInicia_Click);
             // 
-            // txtMinutos
+            // txtBoxString
             // 
-            this.txtMinutos.Location = new System.Drawing.Point(17, 196);
-            this.txtMinutos.Name = "txtMinutos";
-            this.txtMinutos.Size = new System.Drawing.Size(64, 20);
-            this.txtMinutos.TabIndex = 9;
-            // 
-            // txtSegundos
-            // 
-            this.txtSegundos.Location = new System.Drawing.Point(121, 196);
-            this.txtSegundos.Name = "txtSegundos";
-            this.txtSegundos.Size = new System.Drawing.Size(80, 20);
-            this.txtSegundos.TabIndex = 10;
-            this.txtSegundos.Text = "30";
+            this.txtBoxString.Location = new System.Drawing.Point(12, 237);
+            this.txtBoxString.Name = "txtBoxString";
+            this.txtBoxString.Size = new System.Drawing.Size(407, 20);
+            this.txtBoxString.TabIndex = 10;
+            this.txtBoxString.Text = "30";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 221);
+            this.label2.Location = new System.Drawing.Point(10, 179);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 12;
             this.label2.Text = "Potência:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(14, 180);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Minutos:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(118, 180);
+            this.label4.Location = new System.Drawing.Point(9, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 13);
             this.label4.TabIndex = 14;
@@ -153,7 +135,7 @@
             // 
             // numPotencia
             // 
-            this.numPotencia.Location = new System.Drawing.Point(17, 237);
+            this.numPotencia.Location = new System.Drawing.Point(13, 195);
             this.numPotencia.Name = "numPotencia";
             this.numPotencia.Size = new System.Drawing.Size(64, 20);
             this.numPotencia.TabIndex = 15;
@@ -162,28 +144,17 @@
             0,
             0,
             0});
-            // 
-            // lbAquecimento
-            // 
-            this.lbAquecimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAquecimento.Location = new System.Drawing.Point(227, 165);
-            this.lbAquecimento.Name = "lbAquecimento";
-            this.lbAquecimento.Size = new System.Drawing.Size(192, 95);
-            this.lbAquecimento.TabIndex = 16;
-            this.lbAquecimento.Text = "   ";
+            this.numPotencia.ValueChanged += new System.EventHandler(this.numPotencia_ValueChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(431, 269);
-            this.Controls.Add(this.lbAquecimento);
             this.Controls.Add(this.numPotencia);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtSegundos);
-            this.Controls.Add(this.txtMinutos);
+            this.Controls.Add(this.txtBoxString);
             this.Controls.Add(this.btnInicia);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -207,13 +178,10 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnInicia;
-        private System.Windows.Forms.TextBox txtMinutos;
-        private System.Windows.Forms.TextBox txtSegundos;
+        private System.Windows.Forms.TextBox txtBoxString;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numPotencia;
-        private System.Windows.Forms.Label lbAquecimento;
     }
 }
 
