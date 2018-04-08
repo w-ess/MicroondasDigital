@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MicroondasDigitalDesktop.Entidades;
+using System;
 using System.Timers;
 using System.Windows.Forms;
-using MicroondasDigitalDesktop.Entidades;
+
 
 namespace MicroondasDigitalDesktop
 {
@@ -63,20 +57,18 @@ namespace MicroondasDigitalDesktop
 
         private void btnInicia_Click(object sender, EventArgs e)
         {
-            int TempNumero;
-
-            if (int.TryParse(txtMinutos.Text, out TempNumero) && (int.TryParse(txtSegundos.Text, out TempNumero)))
+            try
             {
+                ValidaDados();
                 microondas.Minutos = Convert.ToInt32(txtMinutos.Text);
                 microondas.Segundos = Convert.ToInt32(txtSegundos.Text);
                 microondas.Inciar();
             }
-            else
+            catch(NullReferenceException ex)
             {
-                // MessageBox.Show("Somente é permitido valores numericos para Minutos e Segundos");
-                
-                throw new ArgumentNullException("Somente é permitido valores numericos para Minutos e Segundos");
+                MessageBox.Show(ex.Message);
             }
+
             
 
         }
@@ -85,5 +77,18 @@ namespace MicroondasDigitalDesktop
         {
 
         }
+
+        public void ValidaDados()
+        {
+            int TempNumero;
+
+            if (! (int.TryParse(txtMinutos.Text, out TempNumero) && (int.TryParse(txtSegundos.Text, out TempNumero))) )
+            {
+                throw new NullReferenceException("Somente é permitido valores numericos para Minutos e Segundos");                
+            }
+
+
+        }
+
     }
 }
