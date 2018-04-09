@@ -61,6 +61,7 @@
     <Compile Include="Entidades\Temporizador.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Repositorios\RepositorioProgramas.cs" />
     <Compile Include="View\MicroondasForm.cs">
       <SubType>Form</SubType>
     </Compile>

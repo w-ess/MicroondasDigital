@@ -41,8 +41,9 @@ namespace MicroondasDigitalDesktop.Entidades
 
         // Play e Pausa
         public void Iniciar_Parar()
-        {          
+        {
 
+            // if (aTimer.Enabled == false && this.Segundos > 0)
             if (aTimer.Enabled == false)
             {
                 aTimer.Start();

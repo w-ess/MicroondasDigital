@@ -1,5 +1,8 @@
 ﻿using MicroondasDigitalDesktop.Entidades;
+using MicroondasDigitalDesktop.Repositorios;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Timers;
 using System.Windows.Forms;
 
@@ -15,7 +18,7 @@ namespace MicroondasDigitalDesktop
         }
 
         Microondas microondas = new Microondas();
-        
+        List<Microondas> var1_microondas = new RepositorioProgramas().Microondas;
 
 
 
@@ -37,11 +40,11 @@ namespace MicroondasDigitalDesktop
                 lbCronometro.Text =  Convert.ToString(microondas.Segundos);
             }));
 
-            
-            //Incrmenta label de Aquecimento
+
+            //Incrementa Aquecimento
             for (int i = 1; i <= Convert.ToInt32(numPotencia.Value); i++)
             {
-                Invoke(new MethodInvoker(delegate { txtBoxString.Text = txtBoxString.Text + "."; }));
+                Invoke(new MethodInvoker(delegate { txtBoxString.Text = txtBoxString.Text + microondas.Identificacao; }));
             }
 
             // Pausa time quando o encerrar a contagem
@@ -63,12 +66,48 @@ namespace MicroondasDigitalDesktop
                 // Se textBox vazio recebe zero
                 if (txtBoxString.TextLength <= 0) { txtBoxString.Text = "0"; }
                 
-                // verifica valores de entradas, para recebe valor de cozimento padrão                
-                if (Convert.ToInt32(txtBoxString.Text) == 0) { numPotencia.Value = 8; }
+
+
+                // verifica valores de entradas, para recebe valor de cozimento padrão ou programa                               
+                if ((int.TryParse(txtBoxString.Text, out var TempNumero)))
+                {
+                    // Verificar se é tempo padrão
+                    if (TempNumero == 0)
+                    {
+                        microondas.Potencia = 8;
+                        microondas.Segundos = 30;
+                        microondas.Identificacao = ".";
+                    }
+                    else
+                    {
+                        microondas.Potencia = Convert.ToInt32(numPotencia.Value);
+                        microondas.Segundos = TempNumero;
+                        microondas.Identificacao = ".";
+                    }
+
+                   
+                }
+                else {
+
+                    // Verica programa de aquecimento                         
+                    if (var1_microondas.Find(m => m.Nome.Equals(txtBoxString.Text)) == null)
+                    {
+                        throw new NullReferenceException("alimento incompatível com o programa.");
+                    }
+                    else
+                    {
+                        microondas = var1_microondas.Find(m => m.Nome.Equals(txtBoxString.Text));                       
+                    }
+
+                }
+                
+
+
+                txtBoxString.Text = Convert.ToString(microondas.Segundos);
+                numPotencia.Value = microondas.Potencia;
 
                 ValidaDados();
-                lbCronometro.Text = txtBoxString.Text;                
-                microondas.Segundos = Convert.ToInt32(txtBoxString.Text);
+                lbCronometro.Text = txtBoxString.Text;                                
                 microondas.Inciar();
             }
             catch(NullReferenceException ex)
@@ -77,13 +116,16 @@ namespace MicroondasDigitalDesktop
             }
 
             
-
         }
+
+
+
 
         private void lbCronometro_Click(object sender, EventArgs e)
         {
 
         }
+
 
 
         // Validaçoes do Form

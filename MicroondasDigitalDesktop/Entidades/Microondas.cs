@@ -8,6 +8,9 @@ namespace MicroondasDigitalDesktop.Entidades
 {
     public class Microondas : Temporizador
     {
+        public string Nome { get; set; }
+        public int Potencia { get; set; }    
+        public string Identificacao { get; set; }
         //private void InitializeComponent()
         //{
         //    this.SuspendLayout();
@@ -35,6 +38,24 @@ namespace MicroondasDigitalDesktop.Entidades
             }
 
             base.Inciar();            
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // Microondas
+            // 
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "Microondas";
+            this.Load += new System.EventHandler(this.Microondas_Load);
+            this.ResumeLayout(false);
+
+        }
+
+        private void Microondas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
