@@ -51,6 +51,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPotencia)).BeginInit();
@@ -128,7 +129,6 @@
             this.txtBoxString.Name = "txtBoxString";
             this.txtBoxString.Size = new System.Drawing.Size(407, 20);
             this.txtBoxString.TabIndex = 10;
-            this.txtBoxString.Text = "30";
             // 
             // label2
             // 
@@ -314,11 +314,22 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Alimento:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(310, 65);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(113, 38);
+            this.btnCancelar.TabIndex = 30;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 488);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.grpBoxCadastro);
             this.Controls.Add(this.txtBoxPesquisa);
             this.Controls.Add(this.listBoxProgramas);
@@ -371,6 +382,7 @@
         private System.Windows.Forms.TextBox txtBoxCaractereC;
         private System.Windows.Forms.TextBox txtBoxNomeC;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
 

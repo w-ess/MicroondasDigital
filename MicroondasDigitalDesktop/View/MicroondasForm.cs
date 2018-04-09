@@ -63,7 +63,8 @@ namespace MicroondasDigitalDesktop
         private void btnInicia_Click(object sender, EventArgs e)
         {
             try
-            {
+            {                
+
                 // Se textBox vazio recebe zero
                 if (txtBoxString.TextLength <= 0) { txtBoxString.Text = "0"; }
 
@@ -109,6 +110,7 @@ namespace MicroondasDigitalDesktop
 
                 ValidaDados();
                 lbCronometro.Text = txtBoxString.Text;
+                btnIniciaPausa.Enabled = true;
                 microondas.Inciar();
             }
             catch (NullReferenceException ex)
@@ -233,6 +235,15 @@ namespace MicroondasDigitalDesktop
             numSegundosC.Value    = 1;
             numPotenciaC.Value    = 1;
             txtBoxCaractereC.Text = "";
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            microondas.Parar();
+            btnIniciaPausa.Enabled = false;
+            txtBoxString.Text = "";
+            numPotencia.Value = 10;            
+            lbCronometro.Text = "0";
         }
     }
 }

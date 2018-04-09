@@ -39,6 +39,7 @@ namespace MicroondasDigitalDesktop.Entidades
         }
 
 
+
         // Play e Pausa
         public void Iniciar_Parar()
         {
