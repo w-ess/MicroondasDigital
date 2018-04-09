@@ -38,6 +38,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.numPotencia = new System.Windows.Forms.NumericUpDown();
+            this.btnPesquisa = new System.Windows.Forms.Button();
+            this.listBoxProgramas = new System.Windows.Forms.ListBox();
+            this.txtBoxPesquisa = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numPotencia)).BeginInit();
@@ -45,7 +48,7 @@
             // 
             // btnIniciaPausa
             // 
-            this.btnIniciaPausa.Location = new System.Drawing.Point(223, 115);
+            this.btnIniciaPausa.Location = new System.Drawing.Point(189, 115);
             this.btnIniciaPausa.Name = "btnIniciaPausa";
             this.btnIniciaPausa.Size = new System.Drawing.Size(113, 38);
             this.btnIniciaPausa.TabIndex = 1;
@@ -59,7 +62,7 @@
             this.panel1.Controls.Add(this.lbCronometro);
             this.panel1.Location = new System.Drawing.Point(12, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(196, 99);
+            this.panel1.Size = new System.Drawing.Size(171, 99);
             this.panel1.TabIndex = 3;
             // 
             // lbCronometro
@@ -82,7 +85,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(431, 43);
+            this.panel2.Size = new System.Drawing.Size(653, 43);
             this.panel2.TabIndex = 4;
             // 
             // label1
@@ -98,7 +101,7 @@
             // 
             // btnInicia
             // 
-            this.btnInicia.Location = new System.Drawing.Point(223, 65);
+            this.btnInicia.Location = new System.Drawing.Point(189, 65);
             this.btnInicia.Name = "btnInicia";
             this.btnInicia.Size = new System.Drawing.Size(113, 38);
             this.btnInicia.TabIndex = 8;
@@ -146,11 +149,43 @@
             0});
             this.numPotencia.ValueChanged += new System.EventHandler(this.numPotencia_ValueChanged);
             // 
+            // btnPesquisa
+            // 
+            this.btnPesquisa.Location = new System.Drawing.Point(435, 49);
+            this.btnPesquisa.Name = "btnPesquisa";
+            this.btnPesquisa.Size = new System.Drawing.Size(67, 35);
+            this.btnPesquisa.TabIndex = 17;
+            this.btnPesquisa.Text = "Pesquisa Programa";
+            this.btnPesquisa.UseVisualStyleBackColor = true;
+            this.btnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            // 
+            // listBoxProgramas
+            // 
+            this.listBoxProgramas.AccessibleRole = System.Windows.Forms.AccessibleRole.Grip;
+            this.listBoxProgramas.FormattingEnabled = true;
+            this.listBoxProgramas.Items.AddRange(new object[] {
+            "  "});
+            this.listBoxProgramas.Location = new System.Drawing.Point(308, 90);
+            this.listBoxProgramas.Name = "listBoxProgramas";
+            this.listBoxProgramas.Size = new System.Drawing.Size(333, 121);
+            this.listBoxProgramas.TabIndex = 18;
+            this.listBoxProgramas.SelectedIndexChanged += new System.EventHandler(this.listBoxProgramas_SelectedIndexChanged);
+            // 
+            // txtBoxPesquisa
+            // 
+            this.txtBoxPesquisa.Location = new System.Drawing.Point(308, 57);
+            this.txtBoxPesquisa.Name = "txtBoxPesquisa";
+            this.txtBoxPesquisa.Size = new System.Drawing.Size(121, 20);
+            this.txtBoxPesquisa.TabIndex = 19;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 269);
+            this.ClientSize = new System.Drawing.Size(653, 287);
+            this.Controls.Add(this.txtBoxPesquisa);
+            this.Controls.Add(this.listBoxProgramas);
+            this.Controls.Add(this.btnPesquisa);
             this.Controls.Add(this.numPotencia);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
@@ -182,6 +217,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.NumericUpDown numPotencia;
+        private System.Windows.Forms.Button btnPesquisa;
+        private System.Windows.Forms.ListBox listBoxProgramas;
+        private System.Windows.Forms.TextBox txtBoxPesquisa;
     }
 }
 

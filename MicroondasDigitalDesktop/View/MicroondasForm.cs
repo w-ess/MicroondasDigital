@@ -14,7 +14,7 @@ namespace MicroondasDigitalDesktop
 
         public Form1()
         {
-            InitializeComponent();           
+            InitializeComponent();
         }
 
         Microondas microondas = new Microondas();
@@ -23,8 +23,8 @@ namespace MicroondasDigitalDesktop
 
 
         private void btnIniciaPausa_Click(object sender, EventArgs e)
-        {           
-            microondas.Iniciar_Parar();            
+        {
+            microondas.Iniciar_Parar();
         }
 
 
@@ -35,9 +35,9 @@ namespace MicroondasDigitalDesktop
 
             microondas.Segundos--;
             // Mostra contador na tela através da Label
-            Invoke(new MethodInvoker(delegate 
-            {                
-                lbCronometro.Text =  Convert.ToString(microondas.Segundos);
+            Invoke(new MethodInvoker(delegate
+            {
+                lbCronometro.Text = Convert.ToString(microondas.Segundos);
             }));
 
 
@@ -48,13 +48,13 @@ namespace MicroondasDigitalDesktop
             }
 
             // Pausa time quando o encerrar a contagem
-            if ( microondas.Segundos == 0 )
+            if (microondas.Segundos == 0)
             {
                 microondas.Parar();
                 Invoke(new MethodInvoker(delegate { txtBoxString.Text = "aquecida"; }));
             }
 
-            
+
         }
 
 
@@ -62,10 +62,10 @@ namespace MicroondasDigitalDesktop
         private void btnInicia_Click(object sender, EventArgs e)
         {
             try
-            {                
+            {
                 // Se textBox vazio recebe zero
                 if (txtBoxString.TextLength <= 0) { txtBoxString.Text = "0"; }
-                
+
 
 
                 // verifica valores de entradas, para recebe valor de cozimento padrão ou programa                               
@@ -85,7 +85,7 @@ namespace MicroondasDigitalDesktop
                         microondas.Identificacao = ".";
                     }
 
-                   
+
                 }
                 else {
 
@@ -96,26 +96,26 @@ namespace MicroondasDigitalDesktop
                     }
                     else
                     {
-                        microondas = var1_microondas.Find(m => m.Nome.Equals(txtBoxString.Text));                       
+                        microondas = var1_microondas.Find(m => m.Nome.Equals(txtBoxString.Text));
                     }
 
                 }
-                
+
 
 
                 txtBoxString.Text = Convert.ToString(microondas.Segundos);
                 numPotencia.Value = microondas.Potencia;
 
                 ValidaDados();
-                lbCronometro.Text = txtBoxString.Text;                                
+                lbCronometro.Text = txtBoxString.Text;
                 microondas.Inciar();
             }
-            catch(NullReferenceException ex)
+            catch (NullReferenceException ex)
             {
                 MessageBox.Show(ex.Message);
             }
 
-            
+
         }
 
 
@@ -134,9 +134,9 @@ namespace MicroondasDigitalDesktop
             int TempNumero;
 
 
-            if (! (int.TryParse(txtBoxString.Text, out TempNumero)) ) 
+            if (!(int.TryParse(txtBoxString.Text, out TempNumero)))
             {
-                throw new NullReferenceException("Insira um valor valido em Minutos e Segundos.");                
+                throw new NullReferenceException("Insira um valor valido em Minutos e Segundos.");
             }
 
             // Valida potência
@@ -154,6 +154,43 @@ namespace MicroondasDigitalDesktop
         }
 
         private void numPotencia_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnPesquisa_Click(object sender, EventArgs e)
+        {
+            listBoxProgramas.Items.Clear();
+
+            if (txtBoxPesquisa.TextLength <= 0)
+            {
+
+                foreach (var i in var1_microondas)
+                {
+                    listBoxProgramas.Items.Add("Programa: " + i.Nome +
+                    ", Segundos: " + i.Segundos + ", Potência: " + i.Potencia + ", Caractere: " + i.Identificacao);
+                }
+
+            }
+            else
+            {
+                if (var1_microondas.Find(m => m.Nome.Equals(txtBoxPesquisa.Text)) == null)
+                {
+                    throw new NullReferenceException("Programa não encontrado.");
+                }
+                else
+                {
+                    var result = var1_microondas.Find(m => m.Nome.Equals(txtBoxPesquisa.Text));
+
+                    listBoxProgramas.Items.Add("Programa: " + result.Nome +
+                    ", Segundos: " + result.Segundos + ", Potência: " + result.Potencia + ", Caractere: " + result.Identificacao);
+
+                }
+            }
+            
+        }
+
+        private void listBoxProgramas_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
