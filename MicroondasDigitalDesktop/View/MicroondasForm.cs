@@ -19,6 +19,7 @@ namespace MicroondasDigitalDesktop
 
         Microondas microondas = new Microondas();
         List<Microondas> var1_microondas = new RepositorioProgramas().Microondas;
+        Microondas microndasCadastra = new Microondas();
 
 
 
@@ -160,6 +161,18 @@ namespace MicroondasDigitalDesktop
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
+
+            
+        }
+
+        private void listBoxProgramas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        // Pesquisa programas de aquecimento
+        private void btnPesquisa_Click_1(object sender, EventArgs e)
+        {
             listBoxProgramas.Items.Clear();
 
             if (txtBoxPesquisa.TextLength <= 0)
@@ -187,12 +200,39 @@ namespace MicroondasDigitalDesktop
 
                 }
             }
+
+        }
+
+        private void listBoxProgramas_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
             
         }
 
-        private void listBoxProgramas_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtBoxPesquisa_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Adiciona novo programa            
+            microndasCadastra.Nome          = txtBoxNomeC.Text;
+            microndasCadastra.Segundos      = Convert.ToInt32(numSegundosC.Value);
+            microndasCadastra.Potencia      = Convert.ToInt32(numPotenciaC.Value);
+            microndasCadastra.Identificacao = txtBoxCaractereC.Text;
+
+            var1_microondas.Add(microndasCadastra);
+
+            // Limpa entradas
+            txtBoxNomeC.Text      = "";
+            numSegundosC.Value    = 1;
+            numPotenciaC.Value    = 1;
+            txtBoxCaractereC.Text = "";
         }
     }
 }
